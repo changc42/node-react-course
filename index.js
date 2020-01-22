@@ -12,7 +12,7 @@ app.get("/modify_database", (req, res) => {
     googleId: "23453563747"
   })
     .save()
-    .then(res.send("hello"));
+    .then(res.send(process.env.MONGO_URI));
 });
 
 require("./routes/middleware")(app);
