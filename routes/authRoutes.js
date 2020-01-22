@@ -26,6 +26,5 @@ module.exports = app => {
     new User({
       googleId: "23453563747"
     }).save();
-    res.send("hello!");
   });
 };
