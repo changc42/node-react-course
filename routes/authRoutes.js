@@ -1,4 +1,7 @@
 const passport = require("passport");
+const mongoose = require("mongoose");
+
+const User = mongoose.model("users");
 
 module.exports = app => {
   app.get(
@@ -19,8 +22,6 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  const mongoose = require("mongoose");
-  const User = mongoose.model("users");
   app.get("/modify_database", (req, res) => {
     new User({
       googleId: "23453563747"
