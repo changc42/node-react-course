@@ -10,7 +10,9 @@ const User = mongoose.model("users");
 app.get("/modify_database", (req, res) => {
   new User({
     googleId: "23453563747"
-  }).save();
+  })
+    .save()
+    .then(res.send("hello"));
 });
 
 require("./routes/middleware")(app);
