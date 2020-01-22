@@ -6,6 +6,13 @@ const keys = require("./config/keys");
 mongoose.connect(keys.mongoURI);
 require("./models/user");
 
+const User = mongoose.model("users");
+app.get("/modify_database", (req, res) => {
+  new User({
+    googleId: "23453563747"
+  }).save();
+});
+
 require("./routes/middleware")(app);
 require("./routes/authRoutes")(app);
 
