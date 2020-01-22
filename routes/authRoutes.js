@@ -25,8 +25,7 @@ module.exports = app => {
   app.get("/modify_database", (req, res) => {
     new User({
       googleId: "23453563747"
-    })
-      .save()
-      .then(res.send("hello!"));
+    }).save();
+    res.send("hello!");
   });
 };
