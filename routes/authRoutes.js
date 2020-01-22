@@ -19,7 +19,12 @@ module.exports = app => {
     res.send(req.user);
   });
 
+  const User = mongoose.model("users");
   app.get("/modify_database", (req, res) => {
-    res.send("hello!");
+    new User({
+      googleId: "23453563747"
+    })
+      .save()
+      .then(res.send("hello!"));
   });
 };
