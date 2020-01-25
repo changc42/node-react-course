@@ -1,0 +1,23 @@
+* [33m97f41cb[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/master[m[33m, [m[1;31mheroku/master[m[33m)[m continue debugging. switched order of require(authRoutes) and require(services/passport) in index.js
+* [33m4ae9753[m completed course up to END of video 85, tried to test, but page auth/google is not working. Will attempt to compare this version with previous version where auth/google was working
+* [33m3e81293[m completed course up to video 85
+* [33mc9cbaaf[m[33m ([m[1;32mmaster[m[33m)[m successfully deployed to heroku
+* [33m91c4aaf[m l
+* [33mb81a721[m l
+* [33ma6b7ed5[m l
+* [33ma3d35ef[m l
+* [33me69ec92[m l
+* [33m19c8cd6[m l
+* [33m73d49d7[m l
+* [33m4c8f2ca[m l
+* [33mf60b715[m l
+* [33m6f3ecea[m u
+* [33m9ef5b5f[m u
+* [33md2c5129[m u
+* [33m9658e0c[m u
+* [33mdb077fd[m allowed proxy
+* [33m6800e32[m refactored index.js and separated keys.js into dev and prod. finished authflow
+* [33m8f20249[m u
+* [33m33062e6[m initial commit
+* [33m467553e[m u
+* [33mdb0a4ec[m initial commit
