@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
-require("./routes/middleware")(app);
-require("./routes/authRoutes")(app);
 
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 mongoose.connect(keys.mongoURI);
-
 require("./models/user");
+
+require("./routes/middleware")(app);
+require("./routes/authRoutes")(app);
 
 require("./services/passport");
 
