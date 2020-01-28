@@ -21,7 +21,7 @@ class Header extends Component {
           </a>
           <ul className="right">
             <li>
-              <a href="/auth/logout">logout</a>
+              <a href="/api/logout">logout</a>
             </li>
             <li>
               <a href="/api/current_user">current user</a>
