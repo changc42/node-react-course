@@ -3,10 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Header";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-
-function Landing() {
-  return <h1>landing</h1>;
-}
+import Landing from "./Landing";
 
 function Dashboard() {
   return <h1>Dashboard</h1>;
