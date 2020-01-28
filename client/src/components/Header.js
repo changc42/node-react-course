@@ -9,14 +9,16 @@ class Header extends Component {
       case false:
         return <a href="/auth/google">Login with Google</a>;
       default:
-        return <a>view surveys</a>;
+        return <a href="/surveys">view surveys</a>;
     }
   }
   render() {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a className="left brand-logo">Emaily</a>
+          <a className="left brand-logo" href="/">
+            Emaily
+          </a>
           <ul className="right">
             <li>
               <a href="/auth/logout">logout</a>
