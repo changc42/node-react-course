@@ -11,7 +11,14 @@ class Header extends Component {
       case false:
         return <a href="/auth/google">Login with Google</a>;
       default:
-        return <a href="/surveys">view surveys</a>;
+        return [
+          <li>
+            <Payments />
+          </li>,
+          <li>
+            <a href="/api/logout">Logout</a>
+          </li>
+        ];
     }
   }
   render() {
@@ -25,9 +32,6 @@ class Header extends Component {
             Emaily
           </Link>
           <ul className="right">
-            <li>
-              <a href="/api/logout">logout</a>
-            </li>
             <li>
               <a href="/api/current_user">current user</a>
             </li>
