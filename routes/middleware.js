@@ -1,5 +1,6 @@
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 const keys = require("../config/keys");
 
 module.exports = app => {
@@ -11,4 +12,5 @@ module.exports = app => {
   );
   app.use(passport.initialize());
   app.use(passport.session());
+  app.use(bodyParser.json());
 };

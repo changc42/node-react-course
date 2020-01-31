@@ -8,6 +8,7 @@ require("./models/user");
 
 require("./routes/middleware")(app);
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 require("./services/passport");
 
