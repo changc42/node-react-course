@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 mongoose.connect(keys.mongoURI);
 require("./models/user");
+require("./models/survey");
 
 require("./routes/middleware")(app);
 require("./routes/authRoutes")(app);
