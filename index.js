@@ -10,6 +10,7 @@ require("./models/survey");
 require("./routes/middleware")(app);
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 require("./services/passport");
 
