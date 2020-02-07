@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireCredits = require("../middlewares/requireCredits");
-const Mailer = require("../services/Mailer");
+const sgMail = require("@sendgrid/mail");
+const keys = require("../config/keys");
+const NewMailer = require("../services/NewMailer");
 const surveyTemplate = require("../services/emailTemplates/surveyTemplate");
 
 const Survey = mongoose.model("surveys");
+
+sgMail.setApiKey(keys.sendGridKey);
 
 module.exports = app => {
   app.post("/api/surveys", requireLogin, requireCredits, (req, res) => {
@@ -19,6 +23,6 @@ module.exports = app => {
       dateSent: Date.now()
     });
 
-    const mailer = new Mailer(survey, surveyTemplate(survey));
+    const mailer = new NewMailer(survey, surveyTemplate(survey));
   });
 };

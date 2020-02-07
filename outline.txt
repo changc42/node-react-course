@@ -1,0 +1,40 @@
+user wants to create survey
+user fills out form which sends an object to backend API
+backend uses object to create an "email template" object.
+backend sends email template to sendgrid.
+send grid sends email to recipients.
+recipients click yes or no.
+sendgrid records
+sendgrid sends us all the responses.
+backend stores responses in DB
+
+we will start creating this survey flow on the backend
+first, create route which "creates" survey.
+  this route will receive an object from the front end. Convert this object to an email object.
+
+During creation of survey, store a "survey" object in DB
+
+when user goes to 'createsurvey' route, must check if
+  1. user is logged in
+  2. user has more than zero credits
+
+There will be some front end form where user inputs survey parameters. this info is stored in an object in
+req.body.
+
+at POST(/api/createSurvey), pull properties off of req.body. use model survey constructor.
+new Survey({
+  title,
+  subj,
+  body,
+  recipients: recipients.split(,).map(e=>( new Recipient({email:e.trim()}) )),
+  yes,no})
+
+  how does middleware look like?
+  it is a function much like your typical (res,req)=>{} func, except this has a next parameter.
+
+  after create instance of survey, also create email template(how?). then merge template and instance and create
+  mailer object.
+
+  in mailer, if there are links, sendgrid automatically redirects link to their own server
+
+  we npm i sendgrid, import it, extract sendgrid.mail into "helper"
