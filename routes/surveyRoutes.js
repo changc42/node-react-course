@@ -12,6 +12,7 @@ sgMail.setApiKey(keys.sendGridKey);
 
 module.exports = app => {
   app.post("/api/surveys", requireLogin, requireCredits, (req, res) => {
+    console.log(req.body);
     const { title, subject, body, recipients } = req.body;
 
     const survey = new Survey({
@@ -23,6 +24,7 @@ module.exports = app => {
       dateSent: Date.now()
     });
 
-    const mailer = new NewMailer(survey, surveyTemplate(survey));
+    const mailer = NewMailer(survey, surveyTemplate(survey.body));
+    sgMail.send(mailer);
   });
 };

@@ -1,19 +1,10 @@
-
 const surveyTemplate = require("./emailTemplates/surveyTemplate");
 
-modules.export = (survey, surveyTemplate)=>{
-  return{
-    to: survey
-  }
-}
-
-class NewMailer{
-  constructor(survey, surveyTemplate){
-
-  }
-  to: "changc42@gmail.com",
-  from: "changc42@gmail.com",
-  subject: "A very realistic subject",
-  html: surveyTemplate("Did you like our product?")
+module.exports = ({ subject, recipients, body }, surveyBody) => {
+  return {
+    to: recipients.map(e => e.email),
+    from: "changc42@gmail.com",
+    subject,
+    html: surveyBody
+  };
 };
-sgMail.send(msg);
