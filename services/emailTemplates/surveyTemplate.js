@@ -1,23 +1,12 @@
-module.exports = question => {
-  // return `
-  // <html>
-  //   <body>
-  //     <div style="text-align: center">
-  //       <h1>Help us improve!</h1>
-  //       <p>${question}</p>
-  //       <a href="https://localhost:3000">Yes</a>
-  //       <a href="https://localhost:3000">No</a>
-  //     </div>
-  //   </body>
-  // </html>
+const keys = require("../../config/keys");
 
-  // `;
+module.exports = question => {
   return `
     <div style="text-align: center">
       <h1>Help us improve!</h1>
       <p>${question}</p>
-      <a href="https://localhost:3000">Yes</a>
-      <a href="https://localhost:3000">No</a>
+      <a href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+      <a href="${keys.redirectDomain}/api/surveys/thanks">No</a>
     </div>
   `;
 };
